@@ -1,0 +1,4 @@
+
+class Wfe::Steps
+
+end

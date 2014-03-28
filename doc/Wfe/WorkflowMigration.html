@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Wfe::WorkflowMigration - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/wfe/workflow.rb
+    <li>migrations/workflow_migration.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">ActiveRecord::Migration
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-create">#create</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../BUILD.html">BUILD</a>
+  
+    <li class="file"><a href="../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Wfe.html">Wfe</a>
+  
+    <li><a href="../Wfe/BaseStep.html">Wfe::BaseStep</a>
+  
+    <li><a href="../Wfe/Engine.html">Wfe::Engine</a>
+  
+    <li><a href="../Wfe/ErrorState.html">Wfe::ErrorState</a>
+  
+    <li><a href="../Wfe/Exception.html">Wfe::Exception</a>
+  
+    <li><a href="../Wfe/Lock.html">Wfe::Lock</a>
+  
+    <li><a href="../Wfe/LockMigration.html">Wfe::LockMigration</a>
+  
+    <li><a href="../Wfe/StepError.html">Wfe::StepError</a>
+  
+    <li><a href="../Wfe/Steps.html">Wfe::Steps</a>
+  
+    <li><a href="../Wfe/Steps/ColabDummy.html">Wfe::Steps::ColabDummy</a>
+  
+    <li><a href="../Wfe/Steps/Dummy.html">Wfe::Steps::Dummy</a>
+  
+    <li><a href="../Wfe/Steps/Error.html">Wfe::Steps::Error</a>
+  
+    <li><a href="../Wfe/Steps/RunOnRemoteHosts.html">Wfe::Steps::RunOnRemoteHosts</a>
+  
+    <li><a href="../Wfe/Workflow.html">Wfe::Workflow</a>
+  
+    <li><a href="../Wfe/WorkflowHalted.html">Wfe::WorkflowHalted</a>
+  
+    <li><a href="../Wfe/WorkflowLocked.html">Wfe::WorkflowLocked</a>
+  
+    <li><a href="../Wfe/WorkflowMIA.html">Wfe::WorkflowMIA</a>
+  
+    <li><a href="../Wfe/WorkflowMigration.html">Wfe::WorkflowMigration</a>
+  
+    <li><a href="../Wfe/WorkflowStep.html">Wfe::WorkflowStep</a>
+  
+    <li><a href="../Wfe/WorkflowStepMigration.html">Wfe::WorkflowStepMigration</a>
+  
+    <li><a href="../WorkflowEngine.html">WorkflowEngine</a>
+  
+    <li><a href="../WorkflowEngine/ColabDummy.html">WorkflowEngine::ColabDummy</a>
+  
+    <li><a href="../WorkflowEngine/Dummy.html">WorkflowEngine::Dummy</a>
+  
+    <li><a href="../WorkflowEngine/DummySTDOUT.html">WorkflowEngine::DummySTDOUT</a>
+  
+    <li><a href="../BuildApp.html">BuildApp</a>
+  
+    <li><a href="../ErrorStep.html">ErrorStep</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../PushApp.html">PushApp</a>
+  
+    <li><a href="../RunShell.html">RunShell</a>
+  
+    <li><a href="../StartApp.html">StartApp</a>
+  
+    <li><a href="../StartAppX.html">StartAppX</a>
+  
+    <li><a href="../StopApp.html">StopApp</a>
+  
+    <li><a href="../StopAppX.html">StopAppX</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Wfe::WorkflowMigration</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File lib/wfe/workflow.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:workflow</span>, <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;ENGINE=InnoDB&quot;</span><span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:name</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">text</span> <span class="ruby-value">:init_time_ctx</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">text</span> <span class="ruby-value">:run_time_ctx</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:scheduled</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:start</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:end</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:created_at</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:state</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Workflow</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_PENDING</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

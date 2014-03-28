@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Wfe::BaseStep - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/wfe/base_step.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-_work">#_work</a>
+    
+    <li><a href="#method-i-parse_options">#parse_options</a>
+    
+    <li><a href="#method-i-puts">#puts</a>
+    
+    <li><a href="#method-i-work">#work</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../BUILD.html">BUILD</a>
+  
+    <li class="file"><a href="../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Wfe.html">Wfe</a>
+  
+    <li><a href="../Wfe/BaseStep.html">Wfe::BaseStep</a>
+  
+    <li><a href="../Wfe/Engine.html">Wfe::Engine</a>
+  
+    <li><a href="../Wfe/ErrorState.html">Wfe::ErrorState</a>
+  
+    <li><a href="../Wfe/Exception.html">Wfe::Exception</a>
+  
+    <li><a href="../Wfe/Lock.html">Wfe::Lock</a>
+  
+    <li><a href="../Wfe/LockMigration.html">Wfe::LockMigration</a>
+  
+    <li><a href="../Wfe/StepError.html">Wfe::StepError</a>
+  
+    <li><a href="../Wfe/Steps.html">Wfe::Steps</a>
+  
+    <li><a href="../Wfe/Steps/ColabDummy.html">Wfe::Steps::ColabDummy</a>
+  
+    <li><a href="../Wfe/Steps/Dummy.html">Wfe::Steps::Dummy</a>
+  
+    <li><a href="../Wfe/Steps/Error.html">Wfe::Steps::Error</a>
+  
+    <li><a href="../Wfe/Steps/RunOnRemoteHosts.html">Wfe::Steps::RunOnRemoteHosts</a>
+  
+    <li><a href="../Wfe/Workflow.html">Wfe::Workflow</a>
+  
+    <li><a href="../Wfe/WorkflowHalted.html">Wfe::WorkflowHalted</a>
+  
+    <li><a href="../Wfe/WorkflowLocked.html">Wfe::WorkflowLocked</a>
+  
+    <li><a href="../Wfe/WorkflowMIA.html">Wfe::WorkflowMIA</a>
+  
+    <li><a href="../Wfe/WorkflowMigration.html">Wfe::WorkflowMigration</a>
+  
+    <li><a href="../Wfe/WorkflowStep.html">Wfe::WorkflowStep</a>
+  
+    <li><a href="../Wfe/WorkflowStepMigration.html">Wfe::WorkflowStepMigration</a>
+  
+    <li><a href="../WorkflowEngine.html">WorkflowEngine</a>
+  
+    <li><a href="../WorkflowEngine/ColabDummy.html">WorkflowEngine::ColabDummy</a>
+  
+    <li><a href="../WorkflowEngine/Dummy.html">WorkflowEngine::Dummy</a>
+  
+    <li><a href="../WorkflowEngine/DummySTDOUT.html">WorkflowEngine::DummySTDOUT</a>
+  
+    <li><a href="../BuildApp.html">BuildApp</a>
+  
+    <li><a href="../ErrorStep.html">ErrorStep</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../PushApp.html">PushApp</a>
+  
+    <li><a href="../RunShell.html">RunShell</a>
+  
+    <li><a href="../StartApp.html">StartApp</a>
+  
+    <li><a href="../StartAppX.html">StartAppX</a>
+  
+    <li><a href="../StopApp.html">StopApp</a>
+  
+    <li><a href="../StopAppX.html">StopAppX</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Wfe::BaseStep</h1>
+
+  <div id="description" class="description">
+    
+<p>Abstract Base Step of a <a href="Workflow.html">Workflow</a></p>
+<dl class="rdoc-list note-list"><dt>Author
+<dd>
+<p>jacques@marketo.com</p>
+</dd><dt>Copyright
+<dd>
+<p>Copyright © marketo inc.</p>
+</dd></dl>
+
+<h4 id="label-Description">Description</h4>
+
+<p><a href="Steps.html">Steps</a> forming a workflow should be implemented via
+classes extending <a href="BaseStep.html">Wfe::BaseStep</a>. <a
+href="Steps.html">Steps</a> classes should implement the 'work' method.</p>
+
+<h4 id="label-Usage+Example">Usage Example</h4>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">StopApp</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">BaseStep</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">work</span>(<span class="ruby-identifier">ctx</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;cannot find the servers in the context!&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">ctx</span>[:<span class="ruby-identifier">target_servers</span>].<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">ctx</span>[:<span class="ruby-identifier">target_servers</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;i'm stopping server %s!\n&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">s</span>]  }
+    <span class="ruby-identifier">sleep</span> <span class="ruby-value">2</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-logger" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">logger</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-output_redirect" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">output_redirect</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(step_instance_opts, args = [])</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/wfe/base_step.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">step_instance_opts</span>, <span class="ruby-identifier">args</span> = [])
+  <span class="ruby-identifier">parse_options</span>(<span class="ruby-identifier">step_instance_opts</span>)
+  <span class="ruby-ivar">@args</span> = <span class="ruby-identifier">args</span> <span class="ruby-comment"># currently not used</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-_work" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">_work</span><span
+            class="method-args">(context)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>this is called by <a href="WorkflowStep.html">WorkflowStep</a> here you
+could add pre and post step hooks</p>
+          
+
+          
+          <div class="method-source-code" id="_work-source">
+            <pre><span class="ruby-comment"># File lib/wfe/base_step.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">_work</span>(<span class="ruby-identifier">context</span>)
+  <span class="ruby-comment"># pre step hook</span>
+  <span class="ruby-identifier">ret</span> = <span class="ruby-identifier">work</span>(<span class="ruby-identifier">context</span>)
+  <span class="ruby-comment"># post step hook</span>
+  <span class="ruby-identifier">ret</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- _work-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- _work-method -->
+
+    
+      <div id="method-i-parse_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_options</span><span
+            class="method-args">(opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse_options-source">
+            <pre><span class="ruby-comment"># File lib/wfe/base_step.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_options</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-ivar">@logger</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:logger</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@output_redirect_lambda</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:redirect</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_options-method -->
+
+    
+      <div id="method-i-puts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">puts</span><span
+            class="method-args">(obj)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>override puts io method</p>
+          
+
+          
+          <div class="method-source-code" id="puts-source">
+            <pre><span class="ruby-comment"># File lib/wfe/base_step.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">puts</span> (<span class="ruby-identifier">obj</span>)
+  <span class="ruby-comment">#STDOUT.puts @output_redirect_lambda.inspect</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@output_redirect_lambda</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">print</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@output_redirect_lambda</span>.<span class="ruby-identifier">call</span> <span class="ruby-identifier">obj</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@output_redirect_lambda</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- puts-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- puts-method -->
+
+    
+      <div id="method-i-work" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">work</span><span
+            class="method-args">(context)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>will be called by the workflow engine context is a hash like object
+containing the workflow run time context</p>
+          
+
+          
+          <div class="method-source-code" id="work-source">
+            <pre><span class="ruby-comment"># File lib/wfe/base_step.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">work</span>(<span class="ruby-identifier">context</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- work-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- work-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

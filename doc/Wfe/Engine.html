@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Wfe::Engine - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/wfe/engine.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li><a href="#method-i-create_workflow">#create_workflow</a>
+    
+    <li><a href="#method-i-log">#log</a>
+    
+    <li><a href="#method-i-log_exception">#log_exception</a>
+    
+    <li><a href="#method-i-run">#run</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../BUILD.html">BUILD</a>
+  
+    <li class="file"><a href="../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Wfe.html">Wfe</a>
+  
+    <li><a href="../Wfe/BaseStep.html">Wfe::BaseStep</a>
+  
+    <li><a href="../Wfe/Engine.html">Wfe::Engine</a>
+  
+    <li><a href="../Wfe/ErrorState.html">Wfe::ErrorState</a>
+  
+    <li><a href="../Wfe/Exception.html">Wfe::Exception</a>
+  
+    <li><a href="../Wfe/Lock.html">Wfe::Lock</a>
+  
+    <li><a href="../Wfe/LockMigration.html">Wfe::LockMigration</a>
+  
+    <li><a href="../Wfe/StepError.html">Wfe::StepError</a>
+  
+    <li><a href="../Wfe/Steps.html">Wfe::Steps</a>
+  
+    <li><a href="../Wfe/Steps/ColabDummy.html">Wfe::Steps::ColabDummy</a>
+  
+    <li><a href="../Wfe/Steps/Dummy.html">Wfe::Steps::Dummy</a>
+  
+    <li><a href="../Wfe/Steps/Error.html">Wfe::Steps::Error</a>
+  
+    <li><a href="../Wfe/Steps/RunOnRemoteHosts.html">Wfe::Steps::RunOnRemoteHosts</a>
+  
+    <li><a href="../Wfe/Workflow.html">Wfe::Workflow</a>
+  
+    <li><a href="../Wfe/WorkflowHalted.html">Wfe::WorkflowHalted</a>
+  
+    <li><a href="../Wfe/WorkflowLocked.html">Wfe::WorkflowLocked</a>
+  
+    <li><a href="../Wfe/WorkflowMIA.html">Wfe::WorkflowMIA</a>
+  
+    <li><a href="../Wfe/WorkflowMigration.html">Wfe::WorkflowMigration</a>
+  
+    <li><a href="../Wfe/WorkflowStep.html">Wfe::WorkflowStep</a>
+  
+    <li><a href="../Wfe/WorkflowStepMigration.html">Wfe::WorkflowStepMigration</a>
+  
+    <li><a href="../WorkflowEngine.html">WorkflowEngine</a>
+  
+    <li><a href="../WorkflowEngine/ColabDummy.html">WorkflowEngine::ColabDummy</a>
+  
+    <li><a href="../WorkflowEngine/Dummy.html">WorkflowEngine::Dummy</a>
+  
+    <li><a href="../WorkflowEngine/DummySTDOUT.html">WorkflowEngine::DummySTDOUT</a>
+  
+    <li><a href="../BuildApp.html">BuildApp</a>
+  
+    <li><a href="../ErrorStep.html">ErrorStep</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../PushApp.html">PushApp</a>
+  
+    <li><a href="../RunShell.html">RunShell</a>
+  
+    <li><a href="../StartApp.html">StartApp</a>
+  
+    <li><a href="../StartAppX.html">StartAppX</a>
+  
+    <li><a href="../StopApp.html">StopApp</a>
+  
+    <li><a href="../StopAppX.html">StopAppX</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Wfe::Engine</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Engine.html">Engine</a> abstract the creation and storage of <a
+href="Workflow.html">Workflow</a> and WorkflowStep(s).</p>
+<dl class="rdoc-list note-list"><dt>Author
+<dd>
+<p>jacques@marketo.com</p>
+</dd></dl>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-db_conf" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">db_conf</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-logger" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">logger</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(db_conf, opts = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/wfe/engine.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">db_conf</span>, <span class="ruby-identifier">opts</span> = {})
+  <span class="ruby-ivar">@logger</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:logger</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-comment"># intended for steps output redirection, not for engine to use,</span>
+  <span class="ruby-comment"># but to pass to step instance</span>
+  <span class="ruby-ivar">@redirector_lambda</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:redirect</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-ivar">@db_conf</span> = <span class="ruby-identifier">db_conf</span>
+  <span class="ruby-ivar">@wf</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-comment"># a reference to opts will be passed to step instances</span>
+  <span class="ruby-ivar">@opts</span> = <span class="ruby-identifier">opts</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connected?</span>
+    <span class="ruby-identifier">obj</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">establish_connection</span>(
+        <span class="ruby-value">:adapter</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@db_conf</span>[<span class="ruby-value">:adapter</span>],
+        <span class="ruby-value">:host</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@db_conf</span>[<span class="ruby-value">:host</span>],
+        <span class="ruby-value">:username</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@db_conf</span>[<span class="ruby-value">:username</span>],
+        <span class="ruby-value">:password</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@db_conf</span>[<span class="ruby-value">:password</span>],
+        <span class="ruby-value">:database</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@db_conf</span>[<span class="ruby-value">:database</span>]
+    )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>returns workflow context variables (workitems in Ruote) this should not be
+accessed outside of the instance</p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/wfe/engine.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;workflow context hash accessed outside of execution scope&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-operator">!</span> <span class="ruby-ivar">@wf</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@wf</span>.<span class="ruby-identifier">run_time_ctx</span>[<span class="ruby-identifier">key</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(key,value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>sets workflow context variables (workitems in Ruote)</p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/wfe/engine.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">key</span>,<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;workflow context hash accessed outside of execution scope&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-operator">!</span> <span class="ruby-ivar">@wf</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@wf</span>.<span class="ruby-identifier">run_time_ctx</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+  <span class="ruby-ivar">@wf</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-3D-method -->
+
+    
+      <div id="method-i-create_workflow" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_workflow</span><span
+            class="method-args">(wf_name, init_time_ctx, step_classes)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>saves workflow and steps and context to db. The argument ‘name’ must be
+unique, as the work flow engines does not support 2 or more workflow with
+the same name, it will raise a <a href="Exception.html">Wfe::Exception</a>
+if it founds another workflow named ‘wf_name’</p>
+          
+
+          
+          <div class="method-source-code" id="create_workflow-source">
+            <pre><span class="ruby-comment"># File lib/wfe/engine.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_workflow</span>(<span class="ruby-identifier">wf_name</span>, <span class="ruby-identifier">init_time_ctx</span>, <span class="ruby-identifier">step_classes</span>)
+  <span class="ruby-comment"># raise an exception if the workflow already exists</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;workflow %s already exists&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">wf_name</span>]) <span class="ruby-keyword">if</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Workflow</span>.<span class="ruby-identifier">exists?</span>({ <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">wf_name</span>})
+
+  <span class="ruby-identifier">n</span> = <span class="ruby-value">0</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">transaction</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">w</span> = <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Workflow</span>.<span class="ruby-identifier">create</span>(
+        <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">wf_name</span>,
+        <span class="ruby-value">:init_time_ctx</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">init_time_ctx</span>,
+        <span class="ruby-value">:run_time_ctx</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">init_time_ctx</span>,
+        <span class="ruby-value">:scheduled</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>,
+        <span class="ruby-value">:state</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Workflow</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_PENDING</span>,
+        <span class="ruby-value">:created_at</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+    )
+    <span class="ruby-identifier">step_classes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">clazz</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">clazz</span> = <span class="ruby-identifier">clazz</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">clazz</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Class</span>)
+      <span class="ruby-identifier">w</span>.<span class="ruby-identifier">steps</span>.<span class="ruby-identifier">create</span>(
+          <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;%d-%s-%s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">n</span> =<span class="ruby-operator">+</span> <span class="ruby-value">1</span> ,<span class="ruby-identifier">wf_name</span>, <span class="ruby-identifier">clazz</span>],
+          <span class="ruby-value">:impl_class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">clazz</span>,
+          <span class="ruby-value">:args</span> =<span class="ruby-operator">&gt;</span> [],
+          <span class="ruby-value">:state</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">WorkflowStep</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_PENDING</span>
+      )
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">w</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_workflow-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_workflow-method -->
+
+    
+      <div id="method-i-log" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">log</span><span
+            class="method-args">(msg,level = Logger::DEBUG)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>encapsulate call to logger, for cases when logger is not set (nil) DRY</p>
+          
+
+          
+          <div class="method-source-code" id="log-source">
+            <pre><span class="ruby-comment"># File lib/wfe/engine.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">log</span>(<span class="ruby-identifier">msg</span>,<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">DEBUG</span>)
+  <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">log</span>(<span class="ruby-identifier">level</span>, <span class="ruby-identifier">msg</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- log-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- log-method -->
+
+    
+      <div id="method-i-log_exception" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">log_exception</span><span
+            class="method-args">(msg, e)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>helper function to format and log exceptions, DRY</p>
+          
+
+          
+          <div class="method-source-code" id="log_exception-source">
+            <pre><span class="ruby-comment"># File lib/wfe/engine.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">log_exception</span>(<span class="ruby-identifier">msg</span>, <span class="ruby-identifier">e</span>)
+  <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">log</span>(<span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">ERROR</span>, <span class="ruby-identifier">msg</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">log</span>(<span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">ERROR</span>, <span class="ruby-identifier">e</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- log_exception-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- log_exception-method -->
+
+    
+      <div id="method-i-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">(wf_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>THe argument ‘wf_name’ should be matching the name of a workflow that was
+previously saves to the DB. @see <a
+href="Engine.html#method-i-create_workflow">#create_workflow</a></p>
+
+<p>Raises <a href="Exception.html">Wfe::Exception</a> if wf_name cannot be
+found in db Raises <a href="WorkflowLocked.html">Wfe::WorkflowLocked</a> if
+another process has not release the lock on ‘wf_name’ Raises  <a
+href="ErrorState.html">Wfe::ErrorState</a> if any step of the work flow is
+in started or error state, this prevents resuming workflows that have run
+into a failure that was not addressed Raises <a
+href="StepError.html">Wfe::StepError</a> if a steps raises an exception -
+i.e. if a step runs into any problem and cannot complete its work TODO:
+clear up db lock on return (success or failure)</p>
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/wfe/engine.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>(<span class="ruby-identifier">wf_name</span>)
+  <span class="ruby-comment"># make sure the workflow has been previously creted and save in the database</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">WorkflowMIA</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;workflow %s not found&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">wf_name</span>]) <span class="ruby-keyword">unless</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Workflow</span>.<span class="ruby-identifier">exists?</span>({ <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">wf_name</span>})
+
+  <span class="ruby-comment"># using the sempahore to 'lock' this workflow. Note that the workflow is</span>
+  <span class="ruby-comment"># not really 'locked', we assume the Semaphore is used correctly</span>
+  <span class="ruby-comment"># to insure only one process writes updates to a single workflow instance at any time</span>
+  <span class="ruby-comment"># lock duration is arbitrary, but should be long enough not to be cleaned up by mistake</span>
+  <span class="ruby-identifier">lock_duration</span> = <span class="ruby-value">60</span>*<span class="ruby-value">60</span>*<span class="ruby-value">24</span>*<span class="ruby-value">30</span>
+  <span class="ruby-comment"># raise and exception if the semaphore already exists, could be a left over from</span>
+  <span class="ruby-comment"># a previously dead process or a running one</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">WorkflowLocked</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;workflow %s is locked&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">wf_name</span>]) <span class="ruby-keyword">unless</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Lock</span>.<span class="ruby-identifier">acquire?</span>(<span class="ruby-identifier">wf_name</span>,<span class="ruby-identifier">lock_duration</span>)
+
+  <span class="ruby-identifier">wf</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-comment"># mark the workflow as started!</span>
+  <span class="ruby-ivar">@wf</span> = <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Workflow</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">wf_name</span>)
+
+  <span class="ruby-comment"># collect the state of each steps, and raise exception if the workflow is not</span>
+  <span class="ruby-comment"># in a state where it can be executed</span>
+  <span class="ruby-identifier">steps_to_run</span> = []
+  <span class="ruby-ivar">@wf</span>.<span class="ruby-identifier">steps</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># a step that has previously been put to 'error' indicates the workflow cannot be executed in its current state</span>
+    <span class="ruby-comment"># a step that a step in 'started' state indicates that the workflow is being run  - something that shouldnt happen</span>
+    <span class="ruby-comment"># if the Semaphore earlier work - or some problem with a previous process, e.g. someone kill -9 the ruby process</span>
+    <span class="ruby-comment"># executing the worlkflow</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">state</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">WorkflowStep</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_ERROR</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">state</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">WorkflowStep</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_STARTED</span>
+      <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Lock</span>.<span class="ruby-identifier">release</span>(<span class="ruby-identifier">wf_name</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">ErrorState</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;a step is in %s state: %s&quot;</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">s</span>.<span class="ruby-identifier">state</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">name</span>])
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">state</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">WorkflowStep</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_PENDING</span>
+      <span class="ruby-identifier">steps_to_run</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">s</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">steps_to_run</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-comment"># no step in 'pending' state, hence consider the workflow completed</span>
+    <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Lock</span>.<span class="ruby-identifier">release</span>(<span class="ruby-identifier">wf_name</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">log</span>(<span class="ruby-string">&quot;starting execution on workflow %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-ivar">@wf</span>.<span class="ruby-identifier">name</span>], <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>)
+  <span class="ruby-ivar">@wf</span>.<span class="ruby-identifier">state</span> = <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Workflow</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_STARTED</span>
+  <span class="ruby-ivar">@wf</span>.<span class="ruby-identifier">save</span>
+
+  <span class="ruby-identifier">steps_to_run</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">step</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">log</span>(<span class="ruby-string">&quot;executing step %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">step</span>.<span class="ruby-identifier">name</span>], <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>)
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-comment"># execute impl_class</span>
+      <span class="ruby-comment"># TODO: figure out context</span>
+      <span class="ruby-identifier">step</span>.<span class="ruby-identifier">run</span>(<span class="ruby-keyword">self</span>, <span class="ruby-ivar">@opts</span>)
+      <span class="ruby-comment"># mark step as completed. The step should throw an exception if a problem occurs</span>
+      <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">WorkflowStep</span>.<span class="ruby-identifier">transaction</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">step</span>.<span class="ruby-identifier">state</span> = <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">WorkflowStep</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_COMPLETED</span>
+        <span class="ruby-identifier">step</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">log</span>(<span class="ruby-string">&quot;completed step %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">step</span>.<span class="ruby-identifier">name</span>], <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span>=<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">log_exception</span>(<span class="ruby-string">&quot;caught exception while executing step %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">step</span>.<span class="ruby-identifier">name</span>], <span class="ruby-identifier">e</span>)
+      <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">WorkflowStep</span>.<span class="ruby-identifier">transaction</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">step</span>.<span class="ruby-identifier">state</span> = <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">WorkflowStep</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_ERROR</span>
+        <span class="ruby-identifier">step</span>.<span class="ruby-identifier">save</span>
+        <span class="ruby-identifier">step</span>.<span class="ruby-identifier">workflow</span>.<span class="ruby-identifier">state</span> = <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Workflow</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_ERROR</span>
+        <span class="ruby-identifier">step</span>.<span class="ruby-identifier">workflow</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment"># release the lock, so the workflow can be resumed alter on</span>
+      <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Lock</span>.<span class="ruby-identifier">release</span>(<span class="ruby-identifier">wf_name</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">StepError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">e</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@wf</span>.<span class="ruby-identifier">state</span> = <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Workflow</span><span class="ruby-operator">::</span><span class="ruby-constant">STATE_COMPLETED</span>
+  <span class="ruby-ivar">@wf</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">log</span>(<span class="ruby-string">&quot;completed workflow %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-ivar">@wf</span>.<span class="ruby-identifier">name</span>], <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>)
+  <span class="ruby-constant">Wfe</span><span class="ruby-operator">::</span><span class="ruby-constant">Lock</span>.<span class="ruby-identifier">release</span>(<span class="ruby-identifier">wf_name</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

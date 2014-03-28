@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class WorkflowStep - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/wfe/workflow_step.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">ActiveRecord::Base
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-run">#run</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Wfe.html">Wfe</a>
+  
+    <li><a href="./Wfe/BaseStep.html">Wfe::BaseStep</a>
+  
+    <li><a href="./Wfe/Engine.html">Wfe::Engine</a>
+  
+    <li><a href="./Wfe/ErrorState.html">Wfe::ErrorState</a>
+  
+    <li><a href="./Wfe/Exception.html">Wfe::Exception</a>
+  
+    <li><a href="./Wfe/Lock.html">Wfe::Lock</a>
+  
+    <li><a href="./Wfe/StepError.html">Wfe::StepError</a>
+  
+    <li><a href="./Wfe/Workflow.html">Wfe::Workflow</a>
+  
+    <li><a href="./Wfe/WorkflowEngineCreateTables.html">Wfe::WorkflowEngineCreateTables</a>
+  
+    <li><a href="./Wfe/WorkflowHalted.html">Wfe::WorkflowHalted</a>
+  
+    <li><a href="./Wfe/WorkflowLocked.html">Wfe::WorkflowLocked</a>
+  
+    <li><a href="./BuildApp.html">BuildApp</a>
+  
+    <li><a href="./ErrorStep.html">ErrorStep</a>
+  
+    <li><a href="./PushApp.html">PushApp</a>
+  
+    <li><a href="./StartApp.html">StartApp</a>
+  
+    <li><a href="./StopApp.html">StopApp</a>
+  
+    <li><a href="./WorkflowStep.html">WorkflowStep</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class WorkflowStep</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="STATE_COMPLETED">STATE_COMPLETED
+        
+        <dd class="description">
+        
+      
+        <dt id="STATE_ERROR">STATE_ERROR
+        
+        <dd class="description">
+        
+      
+        <dt id="STATE_PENDING">STATE_PENDING
+        
+        <dd class="description">
+        
+      
+        <dt id="STATE_STARTED">STATE_STARTED
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">(runtime_ctx)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>a step has a class implementing a ‘work’ method that should be called
+however, the step stored in the DB includes the name of the class so an
+object of the class needs to be instiancated before calling the work method</p>
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/wfe/workflow_step.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>(<span class="ruby-identifier">runtime_ctx</span>)
+  <span class="ruby-identifier">clazz</span> = <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">impl_class</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">WorkflowEngineException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;step class %s is not defined as a class&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">impl_class</span>]) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">clazz</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Class</span>)
+  <span class="ruby-identifier">instance</span> = <span class="ruby-identifier">clazz</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">work</span>(<span class="ruby-identifier">runtime_ctx</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

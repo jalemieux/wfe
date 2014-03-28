@@ -1,0 +1,148 @@
+= WFE - Persisted Workflow Engine
+==== Features
+* Sequential step by step execution
+* Pause on step error
+* Can define custom step, or use generic step [TODO]
+* Ability to restart failed steps [TODO]
+* Ability to delete the workflow in error
+* Ability to force pause after current step [TODO]
+* Ability to force stop [TODO]
+* Workflow is persisted along with its step states in a database
+* Steps can share data through a workflow run time context
+
+== Overview
+A workflow (Workflow) consist of a sequence of steps (WorkflowStep). Each steps includes the name of the class
+implementing the steps and other attributes such as the state. THe class implementing the step should extend BaseStep.
+
+The work flow engine (Engine) abstracts some of the creational and behavioral patterns, such as creation of workflows,
+workflow steps, and their storage to a database.  The workflow engine is built on top of ActiveRecord, hence supports
+various DB in theory. In practice, some classes like Lock use mysql specific locking syntax and might not work with
+other DBMS.
+
+== Getting Started
+
+
+=== Dev Setup
+
+Get the source:
+
+    svn co https://
+
+install gem dependencies, by running bundle in your working copy:
+
+    bundle install
+
+
+Edit conf/db_conf.yml to your database settings. For exmaple:
+    test:
+      adapter: "mysql2"
+      host: "127.0.0.1"
+      username: "root"
+      password: "password"
+      database: "wfe_test"
+    prod:
+      adapter: "mysql2"
+      host: "127.0.0.1"
+      username: "root"
+      password: "p4ssVV0rd
+      database: "wfe"
+
+Create the databases:
+
+    mysql -uroot -punlock -h127.0.0.1 -e 'create database wfe_test; create database wfe';
+
+Setup your test database:
+
+    rake db_setup_test_database
+
+Run rpsecs:
+
+    rake rspec
+
+build and install gem:
+
+    gem build wfe.gemspec && gem install ./wfe-0.0.0.gem
+
+
+== Usage Example
+These are the usual steps in creating and executing a workflow:
+* implement your custom WorkflowStep(s)
+* instantiate an Engine
+* create and save a Workflow identified by an unique workflow name
+* execute workflow identified by a workflow name
+
+==== Implementing Custom Steps
+You can either use generic step implementation [TODO], or implement your own steps. To implement your own step, you
+should define a class that extends BaseStep and its methods. For example:
+
+    class RunShell < Wfe::BaseStep
+     def work(ctx)
+       raise Exception.new("cannot find the maintenance cmd in the context!") if ctx[:maint_cmd].nil?
+       ctx[:stopped_servers].each do |s|
+          print "Running the maintenance on %s!\n" % [s]
+           abort hte workflow if a command is not run successfully
+          raise Exception.new("cmd failed!") unless system(ctx[:maint_cmd])
+        end
+     end
+    end
+
+
+The method work is the BaseStep method that should be overriden. 'ctx' is a hash like structure that is past from one
+step to another during the execution workflow. It contains arguments of the workflow, and anything that needs to be
+shared among steps. Note that to halt the workflow execution, raise an Exception.
+
+==== Engine Instantiation
+You need to pass the db config and options to the Engine contructor.
+    opts = {
+        :logger => Logger.new("/var/log/mktoutils/test.log"),
+    }
+    db_conf = {
+        :adapter  => "mysql2",
+        :host     => "127.0.0.1",
+        :username => "root",
+        :password => "unlock",
+        :database => "test"
+    }
+
+    wfe = Wfe::Engine.new(db_conf, opts)
+Options that are currently supported:
+    :logger : instance of core Logger.
+
+==== Create And Save A Workflow
+Let's say we have implemented 3 custom step, StopAppX, RunCmd, StartAppX.
+
+   # define the sequence of steps, steps are Classes which extends BaseStep
+   server_maintenance = [ StopAppX, RunCmd, StartAppX]
+
+   #arguments that should be in the context of the workflow at init time
+   # i.e. required by some steps
+
+   init_time_ctx = {
+       :cmd_to_run => 'mv /opt/app/logs/*.log /dev/null #who cares about logs right',
+       :target_servers => ['intweb1', 'intweb2', 'intbe1', 'intbe2']
+   }
+
+   # create the workflow, and save it
+   wf = wfe.create_workflow('my_workflow',init_time_ctx,server_maintenance)
+
+Note that we named out workflow 'my_workflow'. THis will be used later on whenever we need to load a workflow. This
+name should be unique, an exception will be thrown if it's not.
+
+==== Workflow Execution
+We load a workflow by name, and call run:
+
+
+  begin
+    wfe.run(wf_name)
+  rescue Wfe::Exception=>e
+    puts "unknown exception: %s" % [e.to_s]
+  rescue Wfe::WorkflowHalted=>e
+    puts "workflow halted: %s" % [e.to_s]
+  rescue Wfe::StepError=>e
+    puts "step error: %s" % [e.to_s]
+  rescue Wfe::WorkflowLocked=>e
+    puts "workflow locked: %s" % [e.to_s]
+  rescue Wfe::ErrorState=>e
+    puts "workflow in error state: %s" % [e.to_s]
+  end
+

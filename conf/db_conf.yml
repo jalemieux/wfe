@@ -1,0 +1,12 @@
+test:
+  adapter: "mysql2"
+  host: "127.0.0.1"
+  username: "root"
+  password: "unlock"
+  database: "wfe_test"
+prod:
+  adapter: "mysql2"
+  host: "127.0.0.1"
+  username: "root"
+  password: "unlock"
+  database: "wfe"
